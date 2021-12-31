@@ -1,5 +1,5 @@
 if TPKILL_LOADED and not _G.TPKILL_DEBUG == true then
-	error("Legend's HUB is already loaded!",0)
+	error("TPKill is already loaded!",0)
 	return
 end
 
