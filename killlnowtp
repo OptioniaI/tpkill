@@ -1,4 +1,9 @@
--- Made by Hidden#4642
+if TPKILL_LOADED and not _G.TPKILL_DEBUG == true then
+	error("Legend's HUB is already loaded!",0)
+	return
+end
+
+pcall(function() getgenv().TPKILL_LOADED = true end)
 
 local TPKill = Instance.new("ScreenGui")
 local main = Instance.new("ImageLabel")
