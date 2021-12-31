@@ -1,0 +1,94 @@
+-- Made by Hidden#4642
+
+local TPKill = Instance.new("ScreenGui")
+local main = Instance.new("ImageLabel")
+local backgui = Instance.new("ImageLabel")
+local tel = Instance.new("ImageLabel")
+local typetel = Instance.new("TextBox")
+local ent = Instance.new("ImageLabel")
+local exec = Instance.new("TextButton")
+
+--Properties:
+
+TPKill.Name = "TPKill"
+TPKill.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = TPKill
+main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+main.BackgroundTransparency = 1.000
+main.Position = UDim2.new(0.362519205, 0, 0.321428567, 0)
+main.Size = UDim2.new(0, 217, 0, 161)
+main.Visible = false
+main.Image = "rbxassetid://3570695787"
+main.ScaleType = Enum.ScaleType.Slice
+main.SliceCenter = Rect.new(100, 100, 100, 100)
+main.SliceScale = 0.120
+main.Active = true
+main.Visible = true
+main.Draggable = true
+
+backgui.Name = "backgui"
+backgui.Parent = main
+backgui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+backgui.BackgroundTransparency = 1.000
+backgui.Position = UDim2.new(-0.0015361011, 0, -0.0388198718, 0)
+backgui.Size = UDim2.new(0, 217, 0, 161)
+backgui.Image = "rbxassetid://3570695787"
+backgui.ImageColor3 = Color3.fromRGB(72, 72, 73)
+backgui.ScaleType = Enum.ScaleType.Slice
+backgui.SliceCenter = Rect.new(100, 100, 100, 100)
+backgui.SliceScale = 0.120
+
+tel.Name = "tel"
+tel.Parent = main
+tel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+tel.BackgroundTransparency = 1.000
+tel.Position = UDim2.new(0.258064508, 0, 0.1863354, 0)
+tel.Size = UDim2.new(0, 105, 0, 36)
+tel.Image = "rbxassetid://3570695787"
+tel.ScaleType = Enum.ScaleType.Slice
+tel.SliceCenter = Rect.new(100, 100, 100, 100)
+tel.SliceScale = 0.120
+
+typetel.Name = "typetel"
+typetel.Parent = tel
+typetel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+typetel.BackgroundTransparency = 1.000
+typetel.Size = UDim2.new(0, 105, 0, 36)
+typetel.Font = Enum.Font.ArialBold
+typetel.Text = "Type a Username"
+typetel.TextColor3 = Color3.fromRGB(0, 0, 0)
+typetel.TextSize = 12.000
+
+ent.Name = "ent"
+ent.Parent = main
+ent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ent.BackgroundTransparency = 1.000
+ent.Position = UDim2.new(0.258064508, 0, 0.559006214, 0)
+ent.Size = UDim2.new(0, 105, 0, 36)
+ent.Image = "rbxassetid://3570695787"
+ent.ScaleType = Enum.ScaleType.Slice
+ent.SliceCenter = Rect.new(100, 100, 100, 100)
+ent.SliceScale = 0.120
+
+exec.Name = "exec"
+exec.Parent = ent
+exec.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+exec.BackgroundTransparency = 1.000
+exec.Size = UDim2.new(0, 105, 0, 36)
+exec.Font = Enum.Font.ArialBold
+exec.TextColor3 = Color3.fromRGB(0, 0, 0)
+exec.TextSize = 13.000
+
+exec.MouseButton1Click:connect(function()
+	local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local p2 = typetel.Text
+	local pos = p1.CFrame
+
+	p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+
+	wait(0.2)
+
+	p1.CFrame = pos
+end)
