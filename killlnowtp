@@ -100,7 +100,7 @@ end
 exec.MouseButton1Click:connect(function()
 local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
     local pos = p1.CFrame
-for i,v in pairs (Shorten(TextBox.Text)) do
+for i,v in pairs (Shorten(typetel.Text)) do
     p1.CFrame = v.Character.HumanoidRootPart.CFrame
     wait(0.2)
     p1.CFrame = pos
