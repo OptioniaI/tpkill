@@ -1,6 +1,6 @@
 if TPKILL_LOADED and not _G.TPKILL_DEBUG == true then
-	error("TPKill is already loaded!",0)
-	return
+    error("TPKill is already loaded!",0)
+    return
 end
 
 pcall(function() getgenv().TPKILL_LOADED = true end)
@@ -87,14 +87,22 @@ exec.Text = "Kill!"
 exec.TextColor3 = Color3.fromRGB(0, 0, 0)
 exec.TextSize = 13.000
 
+function Shorten(Username)
+    local PlayerList = {}
+    for i,plrs in pairs(game:GetService('Players'):GetPlayers()) do
+        if plrs.Name:lower():sub(1, #Username) == Username:lower() then
+            table.insert(PlayerList,plrs)
+        end
+    end
+    return PlayerList    
+end
+
 exec.MouseButton1Click:connect(function()
-	local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
-	local p2 = typetel.Text
-	local pos = p1.CFrame
-
-	p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
-
-	wait(0.2)
-
-	p1.CFrame = pos
+local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local pos = p1.CFrame
+for i,v in pairs (Shorten(TextBox.Text)) do
+    p1.CFrame = v.Character.HumanoidRootPart.CFrame
+    wait(0.2)
+    p1.CFrame = pos
+end
 end)
