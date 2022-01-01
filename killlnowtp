@@ -83,6 +83,7 @@ exec.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 exec.BackgroundTransparency = 1.000
 exec.Size = UDim2.new(0, 105, 0, 36)
 exec.Font = Enum.Font.ArialBold
+exec.Text = "Kill!"
 exec.TextColor3 = Color3.fromRGB(0, 0, 0)
 exec.TextSize = 13.000
 
