@@ -87,6 +87,18 @@ exec.Text = "Kill!"
 exec.TextColor3 = Color3.fromRGB(0, 0, 0)
 exec.TextSize = 13.000
 
+
+
+function Shorten(Username)
+    local PlayerList = {}
+    for i,fatbird in pairs(game.Players:GetPlayers()) do
+        if fatbird.Name:lower():sub(1, #Username) == Username:lower() then
+            table.insert(PlayerList,fatbird)
+        end
+    end
+    return PlayerList    
+end
+
 exec.MouseButton1Click:connect(function()
 	local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
 	local p2 = typetel.Text
