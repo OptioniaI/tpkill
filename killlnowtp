@@ -94,7 +94,7 @@ exec.MouseButton1Click:connect(function()
 
 	p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
 
-	wait(0.17
+	wait(0.17)
 
 	p1.CFrame = pos
 end)
