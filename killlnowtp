@@ -13,8 +13,6 @@ local typetel = Instance.new("TextBox")
 local ent = Instance.new("ImageLabel")
 local exec = Instance.new("TextButton")
 
---Properties:
-
 TPKill.Name = "TPKill"
 TPKill.Parent = game.CoreGui
 
@@ -24,7 +22,6 @@ main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 main.BackgroundTransparency = 1.000
 main.Position = UDim2.new(0.362519205, 0, 0.321428567, 0)
 main.Size = UDim2.new(0, 217, 0, 161)
-main.Visible = false
 main.Image = "rbxassetid://3570695787"
 main.ScaleType = Enum.ScaleType.Slice
 main.SliceCenter = Rect.new(100, 100, 100, 100)
@@ -98,11 +95,16 @@ function Shorten(Username)
 end
 
 exec.MouseButton1Click:connect(function()
-local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
     local pos = p1.CFrame
 for i,v in pairs (Shorten(typetel.Text)) do
-    p1.CFrame = v.Character.HumanoidRootPart.CFrame
-    task.wait(0.03)
-    p1.CFrame = pos
-end
+        _G.PE = true
+        while _G.PE == true do
+            task.wait()
+            p1.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(-1.5, 0, 1.5)
+            task.wait(0.0000075)
+            _G.PE = false
+            p1.CFrame = pos
+        end
+    end
 end)
