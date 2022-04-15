@@ -100,7 +100,7 @@ exec.MouseButton1Click:connect(function()
 for i,v in pairs (Shorten(typetel.Text)) do
         spawn(function()
             p1.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(-1.5, 0, 0.5)
-            task.wait(0.065)
+            task.wait(0.045)
             _G.L = true
             while _G.L == true do
             p1.CFrame = pos
